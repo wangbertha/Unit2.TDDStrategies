@@ -237,6 +237,61 @@ function exponentiate(b, p) {
   return prod;
 }
 
+function onlyOdds(n) {
+  let sum = 0;
+  for (let i=1; i<=n; i += 2) {
+    sum += i;
+  }
+  return sum;
+}
+
+function bacteriaTime(current, target) {
+  if (target < current) {
+    return 'target must be larger than current';
+  }
+  let time = 0;
+  let currentGrowth = current;
+  while (currentGrowth < target) {
+    currentGrowth *= 2;
+    time += 20;
+  }
+  return time;
+}
+
+function getAverage(nums) {
+  if (nums.length === 0) {
+    return null;
+  }
+  return nums.reduce((total, num) => total += num, 0) / nums.length;
+}
+
+function countCoins(coins) {
+  const values = {
+    P: 1,
+    N: 5,
+    D: 10,
+    Q: 25
+  }
+  let cents = 0;
+  for (const coin of coins) {
+    cents += values[coin];
+  }
+  return cents;
+}
+
+function getPairs(n) {
+  if (n <= 0 || n % 1 !== 0 || typeof n !== 'number') {
+    return 'error';
+  }
+  let pairs = [];
+  for (let i=1; i<=n; i++) {
+    for (let j=i; j<=n; j++) {
+      pairs.push([i,j]);
+    }
+  }
+  return pairs;
+}
+
 //#endregion Practice
 
 /**
@@ -261,9 +316,9 @@ module.exports = {
   makeBoard,
   evenAndOdd,
   exponentiate,
-  // onlyOdds,
-  // bacteriaTime,
-  // getAverage,
-  // countCoins,
-  // getPairs,
+  onlyOdds,
+  bacteriaTime,
+  getAverage,
+  countCoins,
+  getPairs,
 };
