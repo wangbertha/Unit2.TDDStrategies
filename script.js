@@ -118,6 +118,39 @@ function findMax(nums) {
   return max;
 }
 
+function findLongestString(strArr) {
+  let ans = '';
+  for (const str of strArr) {
+    if (str.length > ans.length) {
+      ans = str;
+    }
+  }
+  return ans;
+}
+
+function countPresent(attendance) {
+  return attendance.filter((kid) => kid).length;
+}
+
+function getDnaComplement(dna) {
+  let ans = '';
+  for (const ch of dna) {
+    if (ch === 'A') {
+      ans += 'T';
+    }
+    else if (ch === 'T') {
+      ans += 'A';
+    }
+    else if (ch === 'C') {
+      ans += 'G';
+    }
+    else if (ch === 'G') {
+      ans += 'C';
+    }
+  }
+  return ans;
+}
+
 //#endregion Conditional Accumulation
 
 // --------------------------
@@ -183,9 +216,9 @@ module.exports = {
   factorial,
   buildNArray,
   findMax,
-  // findLongestString,
-  // countPresent,
-  // getDnaComplement,
+  findLongestString,
+  countPresent,
+  getDnaComplement,
   isSongInPlaylist,
   // isAllEven,
   makeBoard,
