@@ -223,6 +223,20 @@ function evenAndOdd(nums) {
 //#region Practice
 // --------------------------
 
+function exponentiate(b, p) {
+  if (typeof b !== 'number' || typeof p !== 'number' || b % 1 !== 0 || p % 1 !== 0) {
+    return 'error';
+  }
+  if (p < 0) {
+    return 'This function does not do negative nth powers.';
+  }
+  let prod = 1;
+  for (let i=0; i<p; i++) {
+    prod *= b;
+  }
+  return prod;
+}
+
 //#endregion Practice
 
 /**
@@ -246,7 +260,7 @@ module.exports = {
   isAllEven,
   makeBoard,
   evenAndOdd,
-  // exponentiate,
+  exponentiate,
   // onlyOdds,
   // bacteriaTime,
   // getAverage,
