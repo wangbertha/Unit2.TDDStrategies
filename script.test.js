@@ -220,7 +220,7 @@ describe("buildNArray", function () {
 describe("findMax", function () {
   describe("works with correct types", function () {
     it("is a function", function () {
-      expect(typeof code.findMax).toBe("number");
+      expect(typeof code.findMax).toBe("function");
     });
     it("returns a number", function () {
       const result = code.findMax([1, 2]);
