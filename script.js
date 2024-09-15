@@ -17,6 +17,33 @@ function multiplyNumbers(a, b) {
   return a * b;
 }
 
+/**
+ * Returns a message about voting based on a person's age
+ * 
+ * @param {number} age - age of person in question
+ * @returns message about voting
+ */
+function vote(age) {
+  if (age >= 18) {
+    return 'Who would you like to vote for?';
+  }
+  return 'You must be 18 or older to vote.';
+}
+
+/**
+ * Concatenates 2 strings
+ * 
+ * @param {string} strA - first string to concatenate
+ * @param {string} strB - second string to concatenate
+ * @returns concatenated string with strA and strB
+ */
+function concatenateStrings(strA, strB) {
+  if (typeof strA !== 'string' || typeof strB !== 'string') {
+    return 'error';
+  }
+  return strA + strB;
+}
+
 //#endregion Guard
 
 // --------------------------
@@ -113,8 +140,8 @@ function makeBoard(cols, rows) {
  */
 module.exports = {
   multiplyNumbers,
-  // vote,
-  // concatenateStrings,
+  vote,
+  concatenateStrings,
   sumArray,
   // sumToN,
   // factorial,
