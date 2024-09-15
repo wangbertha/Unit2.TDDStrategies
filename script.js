@@ -62,6 +62,42 @@ function sumArray(nums) {
   return total;
 }
 
+function sumToN(n) {
+  if (n <= 0) {
+    return 0;
+  }
+  let sum = 0;
+  for (let i=1; i<=n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+function factorial(n) {
+  if (typeof n !== 'number' || n % 1 !== 0 || n < 0) {
+    return 'error';
+  }
+  let prod = 1;
+  for (let i=1; i<=n; i++) {
+    prod *= i;
+  }
+  return prod;
+}
+
+function buildNArray(n) {
+  if (typeof n !== 'number' || n % 1 !== 0) {
+    return 'error';
+  }
+  if (n <= 0) {
+    return [];
+  }
+  let arr = [];
+  for (let i=1; i<=n; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+
 //#endregion Accumulator Variable
 
 // --------------------------
@@ -143,9 +179,9 @@ module.exports = {
   vote,
   concatenateStrings,
   sumArray,
-  // sumToN,
-  // factorial,
-  // buildNArray,
+  sumToN,
+  factorial,
+  buildNArray,
   findMax,
   // findLongestString,
   // countPresent,
